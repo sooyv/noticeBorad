@@ -18,24 +18,21 @@ public class UserController {
 
     // final 이 없으면 계속 새로운 userService 생성
     // final 상수, userService는 계속 바뀔 이유가 없는 애.
-
     private final UserService userService;
 
-
-    @GetMapping("/signUp")
+    @GetMapping("/user/signUp")
     public String signUpForm(Model model) {
         model.addAttribute("userForm", new UserForm());
-        return "User/signUpForm";
+        return "user/signUpForm";
     }
 
-    @PostMapping("/signUp")
+    @PostMapping("/user/signUp")
     public String signUp(@Valid UserForm userForm) {
 //        if (result.hasErrors()) {
 //            return "/signUpForm";
 //        }
 
         User user = new User();
-        //user.setUserId(1l);
         user.setUserNickName(userForm.getUserNickName());
         user.setPassword(userForm.getPassword());
         user.setEmail(userForm.getEmail());
@@ -50,5 +47,11 @@ public class UserController {
         userService.createUser(user);
 
         return "redirect:/";
+    }
+
+    @GetMapping("/user/login")
+    public String login() {
+
+        return "/user/login";
     }
 }

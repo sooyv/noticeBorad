@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+//    @Column(name = "user_id")
     private Long userId;
 
     @Column(unique = true)  // nuique로 유일한 값만 저장할 수 있도록. 중복된 값 저장 불가
