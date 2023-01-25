@@ -13,7 +13,7 @@ public class PostController {
 
     @GetMapping("/create/post")
     public String createPost(Model model) {
-        model.addAttribute("postForm",new PostForm());
+        model.addAttribute("postForm", new PostForm());
         return "post/createPost";
     }
 

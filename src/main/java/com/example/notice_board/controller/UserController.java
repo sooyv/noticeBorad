@@ -28,9 +28,6 @@ public class UserController {
 
     @PostMapping("/user/signUp")
     public String signUp(@Valid UserForm userForm) {
-//        if (result.hasErrors()) {
-//            return "/signUpForm";
-//        }
 
         User user = new User();
         user.setUserNickName(userForm.getUserNickName());
